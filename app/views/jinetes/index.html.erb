@@ -1,25 +1,27 @@
-<h1>Listing jinetes</h1>
+<% provide(:title, 'Lista de Jinetes') %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Lista de  Jinetes</h1><br>
+<%= link_to 'Agregar Jinete', new_jinete_path ,class: "btn btn-large btn-primary"%><br>
 
-  <tbody>
-    <% @jinetes.each do |jinete| %>
-      <tr>
-        <td><%= jinete.nombre %></td>
-        <td><%= link_to 'Show', jinete %></td>
-        <td><%= link_to 'Edit', edit_jinete_path(jinete) %></td>
-        <td><%= link_to 'Destroy', jinete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Jinete', new_jinete_path %>
+<div class="container"> 
+  <br><div class="row">     
+    <table class="table table-striped table-bordered table-condensed table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jinetes.each do |jinete| %>
+          <tr>
+            <td><%= jinete.nombre %></td>
+            <td><%= link_to '<i class="fa fa-pencil"></i>  Editar'.html_safe, edit_jinete_path(jinete) %></td>
+            <td><%= link_to '<i class="fa fa-trash-o"></i>  Borrar'.html_safe, jinete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
