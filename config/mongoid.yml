@@ -9,7 +9,7 @@ development:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      uri: <%= ENV['https://partners.mongohq.com/app29099889-heroku-com/mongo/app29099889/collections?auth_pass=3932e8db4fb5082c07538e50ec37037a1eb4a82aca10f12560b4f453d3f1a66276e9c3'] %>
       options:
         consistency: :strong
         max_retries: 1
